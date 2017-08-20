@@ -19,7 +19,7 @@ The following dependencies are managed using NuGet packages:
 
 ### Installing
 
-Clone repo or download a ZIP file with source files and open *MailGunWrapper.sln* in Visual Studio. 
+Clone repo or download a ZIP file with source files and open *MailgunWrapper.sln* in Visual Studio. 
 
 First project build will update NuGet dependencies automatically.
 
