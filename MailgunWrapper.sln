@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailgunWrapper", "MailgunWrapper\MailgunWrapper.csproj", "{755C2A0C-E051-4D55-B284-D7F4F6FD416B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailgunWrapperTests", "MailgunWrapperTests\MailgunWrapperTests.csproj", "{C9C2F73D-9AC1-4D75-9D77-15CF7178F719}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{755C2A0C-E051-4D55-B284-D7F4F6FD416B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{755C2A0C-E051-4D55-B284-D7F4F6FD416B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{755C2A0C-E051-4D55-B284-D7F4F6FD416B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{755C2A0C-E051-4D55-B284-D7F4F6FD416B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9C2F73D-9AC1-4D75-9D77-15CF7178F719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9C2F73D-9AC1-4D75-9D77-15CF7178F719}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9C2F73D-9AC1-4D75-9D77-15CF7178F719}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9C2F73D-9AC1-4D75-9D77-15CF7178F719}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6DEC7E6B-0658-4A29-948B-7C4F1AEAB1EF}
+	EndGlobalSection
+EndGlobal
