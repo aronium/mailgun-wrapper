@@ -39,7 +39,7 @@ var request = MailgunResourceRequest.Builder
                 .Text("It is I, Leclerc!")
                 .Build();
 
-var response = new MailgunService().GetResponse(request);
+var response = new MailgunService().GetResponse<MailgunSendEmailResponse>(request);
         
 ```
 
