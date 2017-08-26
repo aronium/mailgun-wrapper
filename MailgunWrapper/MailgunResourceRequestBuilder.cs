@@ -55,7 +55,7 @@ namespace MailgunWrapper
         /// <param name="name">Parameter name.</param>
         /// <param name="value">parameter value.</param>
         /// <returns>Builder instance.</returns>
-        public MailgunResourceRequestBuilder AddParameter(string name, object value)
+        public MailgunResourceRequestBuilder WithParameter(string name, object value)
         {
             request.Parameters.Add(name, value);
 
@@ -102,7 +102,7 @@ namespace MailgunWrapper
 
                 var filter = string.Join(" OR ", stringEnumValue);
 
-                return AddParameter("event", filter);
+                return WithParameter("event", filter);
             }
 
             return this;
@@ -200,7 +200,7 @@ namespace MailgunWrapper
         /// <returns>Builder instance.</returns>
         public MailgunResourceRequestBuilder Begin(DateTime begin)
         {
-            return AddParameter("begin", begin.ToString("r"));
+            return WithParameter("begin", begin.ToString("r"));
         }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace MailgunWrapper
         public MailgunResourceRequestBuilder Pretty(bool prettyResponse)
         {
             if (prettyResponse)
-                return AddParameter("pretty", "yes");
+                return WithParameter("pretty", "yes");
 
             return this;
         }
@@ -226,7 +226,7 @@ namespace MailgunWrapper
             if (string.IsNullOrEmpty(from))
                 throw new ArgumentNullException("from");
 
-            return AddParameter("from", from);
+            return WithParameter("from", from);
         }
 
         /// <summary>
@@ -239,7 +239,7 @@ namespace MailgunWrapper
             if (string.IsNullOrEmpty(to))
                 throw new ArgumentNullException("to");
 
-            return AddParameter("to", to);
+            return WithParameter("to", to);
         }
 
         /// <summary>
@@ -252,7 +252,7 @@ namespace MailgunWrapper
             if (string.IsNullOrEmpty(subject))
                 throw new ArgumentNullException("subject");
 
-            return AddParameter("subject", subject);
+            return WithParameter("subject", subject);
         }
 
         /// <summary>
@@ -263,7 +263,7 @@ namespace MailgunWrapper
         public MailgunResourceRequestBuilder Text(string text)
         {
             if (!string.IsNullOrEmpty(text))
-                return AddParameter("text", text);
+                return WithParameter("text", text);
 
             return this;
         }
@@ -276,7 +276,7 @@ namespace MailgunWrapper
         public MailgunResourceRequestBuilder Html(string html)
         {
             if (!string.IsNullOrEmpty(html))
-                return AddParameter("html", html);
+                return WithParameter("html", html);
 
             return this;
         }
@@ -291,7 +291,7 @@ namespace MailgunWrapper
             if (string.IsNullOrEmpty(recipient))
                 throw new ArgumentNullException("recipient");
 
-            return AddParameter("recipient", recipient);
+            return WithParameter("recipient", recipient);
         }
 
         /// <summary>
@@ -302,7 +302,7 @@ namespace MailgunWrapper
         public MailgunResourceRequestBuilder Limit(int limit)
         {
             if (limit > 0)
-                return AddParameter("limit", limit);
+                return WithParameter("limit", limit);
 
             return this;
         }
@@ -359,6 +359,19 @@ namespace MailgunWrapper
         {
             foreach (var file in files)
                 AddFile("attachment", file);
+
+            return this;
+        }
+
+        /// <summary>
+        /// Specifies the reply-to email address to be added as a request header.
+        /// </summary>
+        /// <param name="replyToAddress">Email address used for reply option.</param>
+        /// <returns>Builder instance.</returns>
+        public MailgunResourceRequestBuilder ReplyTo(string replyToAddress)
+        {
+            if (!string.IsNullOrEmpty(replyToAddress))
+                return WithParameter("h:Reply-To", replyToAddress);
 
             return this;
         }
