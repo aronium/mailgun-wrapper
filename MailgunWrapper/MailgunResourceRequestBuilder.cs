@@ -377,6 +377,19 @@ namespace MailgunWrapper
         }
 
         /// <summary>
+        /// Specifies tag for email message.
+        /// </summary>
+        /// <param name="tagName">Tag name</param>
+        /// <returns>Builder instance.</returns>
+        public MailgunResourceRequestBuilder Tag(string tagName)
+        {
+            if (!string.IsNullOrEmpty(tagName))
+                WithParameter("o:tag", tagName);
+
+            return this;
+        }
+
+        /// <summary>
         /// Returns generated request.
         /// </summary>
         /// <returns>MailgunResourceRequest instance.</returns>
