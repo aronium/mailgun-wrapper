@@ -27,7 +27,7 @@ First project build will update NuGet dependencies automatically.
 
 Below is the list of commonly used operations.
 
-### Sending email address
+### Sending email
 
 ```csharp
 // Method will send a simple email to specified recipient
