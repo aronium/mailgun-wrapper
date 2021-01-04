@@ -243,6 +243,31 @@ namespace MailgunWrapper
         }
 
         /// <summary>
+        /// Adds cc parameter.
+        /// </summary>
+        /// <param name="cc">Cc parameter value.</param>
+        /// <returns>Builder instance.</returns>
+        public MailgunResourceRequestBuilder Cc(string cc)
+        {
+            if (string.IsNullOrEmpty(cc))
+                throw new ArgumentNullException("cc");
+
+            return WithParameter("cc", cc);
+        }
+        /// <summary>
+        /// Adds bcc parameter.
+        /// </summary>
+        /// <param name="bcc">Bcc parameter value.</param>
+        /// <returns>Builder instance.</returns>
+        public MailgunResourceRequestBuilder Bcc(string bcc)
+        {
+            if (string.IsNullOrEmpty(bcc))
+                throw new ArgumentNullException("bcc");
+
+            return WithParameter("bcc", bcc);
+        }
+
+        /// <summary>
         /// Adds subject parameter.
         /// </summary>
         /// <param name="subject">Subject parameter value.</param>
